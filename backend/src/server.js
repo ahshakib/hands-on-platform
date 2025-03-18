@@ -7,6 +7,7 @@ import connectDB from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
 import profileRoutes from "./routes/profileRoutes.js";
 import eventRoutes from "./routes/eventRoutes.js";
+import helpRequestRoutes from "./routes/helpRequestRoutes.js";
 
 dotenv.config();
 connectDB();
@@ -23,6 +24,7 @@ app.use(cookieParser());
 app.use("/api/users", userRoutes);
 app.use("/api/profile", profileRoutes);
 app.use("/api/events", eventRoutes);
+app.use("/api/help-requests", helpRequestRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
