@@ -8,6 +8,7 @@ import userRoutes from "./routes/userRoutes.js";
 import profileRoutes from "./routes/profileRoutes.js";
 import eventRoutes from "./routes/eventRoutes.js";
 import helpRequestRoutes from "./routes/helpRequestRoutes.js";
+import teamRoutes from "./routes/teamRoutes.js";
 
 dotenv.config();
 connectDB();
@@ -25,6 +26,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/profile", profileRoutes);
 app.use("/api/events", eventRoutes);
 app.use("/api/help-requests", helpRequestRoutes);
+app.use("/api/teams", teamRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
