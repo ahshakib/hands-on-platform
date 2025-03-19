@@ -9,6 +9,7 @@ import profileRoutes from "./routes/profileRoutes.js";
 import eventRoutes from "./routes/eventRoutes.js";
 import helpRequestRoutes from "./routes/helpRequestRoutes.js";
 import teamRoutes from "./routes/teamRoutes.js";
+import impactRoutes from "./routes/impactRoutes.js";
 
 dotenv.config();
 connectDB();
@@ -27,6 +28,7 @@ app.use("/api/profile", profileRoutes);
 app.use("/api/events", eventRoutes);
 app.use("/api/help-requests", helpRequestRoutes);
 app.use("/api/teams", teamRoutes);
+app.use("/api/impact", impactRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
