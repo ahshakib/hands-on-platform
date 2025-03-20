@@ -40,7 +40,9 @@ const getAllEvents = async (req, res) => {
 // Fetch single event
 const getEventById = async (req, res) => {
   try {
-    const event = await Event.findById(req.params.id).populate("createdBy", "name");
+    const event = await Event.findById(req.params.id)
+      .populate("createdBy", "name")
+      .populate("attendees", "name");
     if (!event) return res.status(404).json({ message: "Event not found" });
 
     res.json(event);
@@ -84,4 +86,5 @@ const deleteEvent = async (req, res) => {
   }
 };
 
-export { createEvent, getAllEvents, getEventById, joinEvent, deleteEvent };
+export { createEvent, deleteEvent, getAllEvents, getEventById, joinEvent };
+
